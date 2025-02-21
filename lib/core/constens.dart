@@ -4,6 +4,7 @@ class RoutesClass {
   static const String login = 'login';
   static const String signUp = 'sign_up';
   static const String logout = 'logout';
+  static const String onboardingView = 'onboardingView';
 
   // Additional common screens
   static const String profile = 'profile';
