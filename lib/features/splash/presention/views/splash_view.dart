@@ -60,4 +60,3 @@ class _SplashViewState extends State<SplashView>
     super.dispose();
   }
 }
-// f
