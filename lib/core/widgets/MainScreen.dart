@@ -2,7 +2,7 @@ import 'package:carsapp/core/widgets/CustomBottomNavigationBar.dart';
 import 'package:carsapp/core/widgets/CustomDrawer.dart';
 import 'package:carsapp/features/Brands/presention/views/BrandsScreen.dart';
 import 'package:carsapp/features/Orders/presention/views/OrdersScreen.dart';
-import 'package:carsapp/features/Profile/presention/view/ProfileScreen.dart';
+import 'package:carsapp/features/Profile/presention/views/ProfileScreen.dart';
 import 'package:carsapp/features/home/presention/home_viwe.dart';
 import 'package:flutter/material.dart';
 
