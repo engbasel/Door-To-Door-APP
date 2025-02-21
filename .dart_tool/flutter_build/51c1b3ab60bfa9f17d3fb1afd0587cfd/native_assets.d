@@ -1,0 +1,1 @@
+ D:\\courses\\Flutter\\projects\\my\ project\\carsapp\\.dart_tool\\flutter_build\\51c1b3ab60bfa9f17d3fb1afd0587cfd\\native_assets.yaml: 
