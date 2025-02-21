@@ -17,6 +17,7 @@ class RoutesClass {
   static const String bookService = 'book_service';
   static const String serviceHistory = 'service_history';
   static const String notifications = 'notifications';
+  static const String MainScreen = 'MainScreen';
   static const String payment = 'payment';
   static const String feedback = 'feedback';
   static const String nearbyServices = 'nearby_services';

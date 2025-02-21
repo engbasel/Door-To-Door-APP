@@ -1,4 +1,5 @@
 import 'package:carsapp/core/constens.dart';
+import 'package:carsapp/core/widgets/MainScreen.dart';
 import 'package:carsapp/features/Profile/presention/view/ProfileScreen.dart';
 import 'package:carsapp/features/auth/presention/view/login_view.dart';
 import 'package:carsapp/features/auth/presention/view/signup_view.dart';
@@ -40,6 +41,7 @@ class DoorToDoorApp extends StatelessWidget {
         RoutesClass.payment: (context) => const PaymentView(),
         RoutesClass.feedback: (context) => const FeedbackView(),
         RoutesClass.nearbyServices: (context) => const NearbyServicesView(),
+        RoutesClass.MainScreen: (context) => const MainScreen(),
       },
     );
   }
