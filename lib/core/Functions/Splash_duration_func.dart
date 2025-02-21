@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 class SplashDurationFunc {
   static void navigateAfterDelay(BuildContext context, Duration duration) {
     Future.delayed(duration, () {
-      Navigator.pushReplacementNamed(context, RoutsClass.signup);
+      Navigator.pushReplacementNamed(context, RoutesClass.signUp);
     });
   }
 }

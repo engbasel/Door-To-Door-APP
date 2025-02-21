@@ -1,4 +1,5 @@
 import 'package:carsapp/Features/auth/presention/widgets/primary_button.dart';
+import 'package:carsapp/core/constens.dart';
 import 'package:carsapp/features/auth/presention/widgets/custom_text_field.dart';
 import 'package:flutter/material.dart';
 import 'package:carsapp/core/AppColors.dart';
@@ -102,31 +103,10 @@ class _LoginViewState extends State<LoginView> {
                   ),
                   const SizedBox(height: 24),
 
-                  /// Login Button
-                  // SizedBox(
-                  //   width: double.infinity,
-                  //   child: ElevatedButton(
-                  //     onPressed: () {
-                  //       if (_formKey.currentState!.validate()) {
-                  //         // Perform login action
-                  //       }
-                  //     },
-                  //     style: ElevatedButton.styleFrom(
-                  //       backgroundColor: AppColors.primaryBlue,
-                  //       padding: const EdgeInsets.symmetric(vertical: 14),
-                  //       shape: RoundedRectangleBorder(
-                  //         borderRadius: BorderRadius.circular(12),
-                  //       ),
-                  //     ),
-                  //     child: const Text(
-                  //       "Login",
-                  //       style: TextStyle(color: Colors.white, fontSize: 18),
-                  //     ),
-                  //   ),
-                  // ),
-                  // const SizedBox(height: 16),
                   CustomButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.pushReplacementNamed(context, RoutesClass.home);
+                    },
                     text: "Login",
                     width: double.infinity,
                   ),

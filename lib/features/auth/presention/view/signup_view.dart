@@ -186,7 +186,7 @@ class _SignUpViewState extends State<SignUpView> {
                     GestureDetector(
                       onTap: () {
                         Navigator.pushReplacementNamed(
-                            context, RoutsClass.login);
+                            context, RoutesClass.login);
                       },
                       child: Text(
                         'Login',

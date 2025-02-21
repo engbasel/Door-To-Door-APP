@@ -17,12 +17,28 @@ class DoorToDoorApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
         useMaterial3: true,
       ),
-      initialRoute: RoutsClass.splash,
+      initialRoute: RoutesClass.splash,
       routes: {
-        RoutsClass.splash: (context) => const SplashView(),
-        RoutsClass.home: (context) => const HomeView(),
-        RoutsClass.signup: (context) => const SignUpView(),
-        RoutsClass.login: (context) => const LoginView(),
+        // Core Screens
+        RoutesClass.splash: (context) => const SplashView(),
+        RoutesClass.login: (context) => const LoginView(),
+        RoutesClass.signUp: (context) => const SignUpView(),
+        RoutesClass.home: (context) => const HomeView(),
+        // RoutesClass.onboarding: (context) => const OnboardingView(),
+
+        // RoutesClass.profile: (context) => const ProfileView(),
+        // RoutesClass.settings: (context) => const SettingsView(),
+        // RoutesClass.aboutUs: (context) => const AboutUsView(),
+        // RoutesClass.helpSupport: (context) => const HelpSupportView(),
+
+        // Car Service Screens
+        // RoutesClass.myCars: (context) => const MyCarsView(),
+        // RoutesClass.bookService: (context) => const BookServiceView(),
+        // RoutesClass.serviceHistory: (context) => const ServiceHistoryView(),
+        // RoutesClass.notifications: (context) => const NotificationsView(),
+        // RoutesClass.payment: (context) => const PaymentView(),
+        // RoutesClass.feedback: (context) => const FeedbackView(),
+        // RoutesClass.nearbyServices: (context) => const NearbyServicesView(),
       },
     );
   }
