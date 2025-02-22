@@ -1,4 +1,5 @@
 import 'package:carsapp/core/Functions/Splash_duration_func.dart';
+import 'package:carsapp/features/splash/presention/widgets/buildAnimatedCircle.dart';
 import 'package:flutter/material.dart';
 
 class SplashView extends StatefulWidget {
@@ -45,8 +46,9 @@ class _SplashViewState extends State<SplashView>
         decoration: BoxDecoration(
           gradient: LinearGradient(
             colors: [
-              Colors.black.withOpacity(0.9),
-              Colors.black.withOpacity(0.7),
+              Colors.black,
+              Colors.black,
+              // Colors.black.withOpacity(0.7),
             ],
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
@@ -61,9 +63,9 @@ class _SplashViewState extends State<SplashView>
                 alignment: Alignment.center,
                 children: [
                   // **Animated Circles** - Pulsating Effect
-                  _buildAnimatedCircle(180, Colors.yellow.withOpacity(0.2)),
-                  _buildAnimatedCircle(140, Colors.yellow.withOpacity(0.4)),
-                  _buildAnimatedCircle(100, Colors.yellow.withOpacity(0.6)),
+                  buildAnimatedCircle(180, Colors.yellow.withOpacity(0.2)),
+                  buildAnimatedCircle(140, Colors.yellow.withOpacity(0.4)),
+                  buildAnimatedCircle(100, Colors.yellow.withOpacity(0.6)),
 
                   // **Logo with Glassmorphism Effect**
                   Container(
@@ -92,28 +94,6 @@ class _SplashViewState extends State<SplashView>
           ),
         ),
       ),
-    );
-  }
-
-  // **Animated Circle Widget**
-  Widget _buildAnimatedCircle(double size, Color color) {
-    return TweenAnimationBuilder<double>(
-      tween: Tween(begin: 0.8, end: 1.2),
-      duration: const Duration(seconds: 2),
-      curve: Curves.easeInOut,
-      builder: (context, scale, child) {
-        return Transform.scale(
-          scale: scale,
-          child: Container(
-            width: size,
-            height: size,
-            decoration: BoxDecoration(
-              shape: BoxShape.circle,
-              color: color,
-            ),
-          ),
-        );
-      },
     );
   }
 

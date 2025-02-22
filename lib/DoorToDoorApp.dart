@@ -31,7 +31,6 @@ class DoorToDoorApp extends StatelessWidget {
       ),
       initialRoute: RoutesClass.splash,
       routes: {
-        // Core Screens
         RoutesClass.splash: (context) => const SplashView(),
         RoutesClass.login: (context) => const LoginView(),
         RoutesClass.signUp: (context) => const SignUpView(),
