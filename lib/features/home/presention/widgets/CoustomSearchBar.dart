@@ -33,37 +33,44 @@ class _CoustomSearchBarState extends State<CoustomSearchBar> {
     return AnimatedContainer(
       duration: const Duration(milliseconds: 300),
       curve: Curves.easeInOut,
+      padding: const EdgeInsets.symmetric(horizontal: 10),
       decoration: BoxDecoration(
-        color: _isFocused
-            ? AppColors.lightSurface.withOpacity(0.95)
-            : AppColors.lightSurface.withOpacity(0.6),
-        borderRadius: BorderRadius.circular(15),
+        color: AppColors.darkBackground,
+        borderRadius: BorderRadius.circular(20),
         border: Border.all(
-          color: _isFocused ? AppColors.primaryBlue : Colors.transparent,
+          color:
+              _isFocused ? AppColors.primaryYellow : AppColors.darkBackground,
           width: 2,
         ),
         boxShadow: _isFocused
             ? [
                 BoxShadow(
-                  color: AppColors.primaryBlue.withOpacity(0.3),
+                  color: AppColors.primaryYellow.withOpacity(0.5),
+                  blurRadius: 15,
+                  spreadRadius: 3,
+                  offset: const Offset(0, 5),
+                ),
+              ]
+            : [
+                BoxShadow(
+                  color: Colors.black.withOpacity(0.3),
                   blurRadius: 10,
                   spreadRadius: 2,
                   offset: const Offset(0, 3),
                 ),
-              ]
-            : [],
+              ],
       ),
       child: TextField(
         focusNode: _focusNode,
-        cursorColor: AppColors.primaryBlue,
-        style: const TextStyle(color: AppColors.lightTextPrimary),
+        cursorColor: AppColors.primaryYellow,
+        style: const TextStyle(color: AppColors.lightSurface, fontSize: 16),
         decoration: InputDecoration(
           hintText: 'Search...',
-          hintStyle: const TextStyle(color: AppColors.lightTextSecondary),
-          prefixIcon: const Icon(Icons.search, color: AppColors.darkBlue),
+          hintStyle:
+              TextStyle(color: AppColors.lightTextSecondary.withOpacity(0.7)),
+          prefixIcon: const Icon(Icons.search, color: AppColors.lightSurface),
           border: InputBorder.none,
-          contentPadding:
-              const EdgeInsets.symmetric(vertical: 12, horizontal: 16),
+          contentPadding: const EdgeInsets.symmetric(vertical: 14),
         ),
       ),
     );
