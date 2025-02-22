@@ -1,7 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:animate_do/animate_do.dart'; // For animations
 
-class CustomHomeAppBar extends StatelessWidget implements PreferredSizeWidget {
+class CustomHomeAppBar extends StatefulWidget implements PreferredSizeWidget {
   const CustomHomeAppBar({super.key});
+
+  @override
+  Size get preferredSize => const Size.fromHeight(kToolbarHeight);
+
+  @override
+  _CustomHomeAppBarState createState() => _CustomHomeAppBarState();
+}
+
+class _CustomHomeAppBarState extends State<CustomHomeAppBar>
+    with SingleTickerProviderStateMixin {
+  bool _hasNotification = true;
 
   @override
   Widget build(BuildContext context) {
@@ -12,23 +24,37 @@ class CustomHomeAppBar extends StatelessWidget implements PreferredSizeWidget {
         style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
       ),
       actions: [
-        IconButton(
-          icon: const Icon(
-            Icons.notifications,
-            color: Colors.yellow,
-          ),
-          onPressed: () {
-            // Handle notifications
-          },
-          splashColor: Colors.yellow, // Yellow accent on tap
-          highlightColor: Colors.yellow.withOpacity(0.3),
-        ),
+        _buildAnimatedNotificationIcon(),
       ],
       elevation: 5,
-      shadowColor: Colors.yellow.withOpacity(0.5), // Yellow shadow effect
+      shadowColor: Colors.yellow.withOpacity(0.5),
     );
   }
 
-  @override
-  Size get preferredSize => const Size.fromHeight(kToolbarHeight);
+  Widget _buildAnimatedNotificationIcon() {
+    return _hasNotification
+        ? Bounce(
+            infinite: true, // Keep animating
+            duration: const Duration(seconds: 2),
+            from: 10,
+            child: _notificationIcon(),
+          )
+        : _notificationIcon();
+  }
+
+  Widget _notificationIcon() {
+    return IconButton(
+      icon: const Icon(
+        Icons.notifications,
+        color: Colors.yellow,
+      ),
+      onPressed: () {
+        setState(() {
+          _hasNotification = !_hasNotification; // Toggle animation
+        });
+      },
+      splashColor: Colors.yellow,
+      highlightColor: Colors.yellow.withOpacity(0.3),
+    );
+  }
 }
