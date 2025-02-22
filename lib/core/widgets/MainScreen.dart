@@ -43,10 +43,11 @@ class _MainScreenState extends State<MainScreen> {
         currentIndex: _selectedIndex,
         onItemTapped: _onItemTapped,
       ),
-      floatingActionButton: CoustomFloationActionButton(
-          pages: _pages,
-          selectedIndex: _selectedIndex,
-          runtimeType: runtimeType),
+      floatingActionButton: CustomFloatingActionButton(
+        pages: _pages,
+        selectedIndex: _selectedIndex,
+        // runtimeType: runtimeType,
+      ),
     );
   }
 }

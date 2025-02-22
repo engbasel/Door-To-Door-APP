@@ -1,3 +1,4 @@
+import 'package:carsapp/core/AppColors.dart';
 import 'package:flutter/material.dart';
 
 class CategoryCard extends StatefulWidget {
@@ -55,7 +56,11 @@ class _CategoryCardState extends State<CategoryCard> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Icon(widget.icon, size: 40, color: Colors.white),
+            Icon(
+              widget.icon,
+              size: 40,
+              color: AppColors.primaryYellow,
+            ),
             const SizedBox(height: 10),
             Text(
               widget.title,
@@ -63,7 +68,7 @@ class _CategoryCardState extends State<CategoryCard> {
               style: const TextStyle(
                 fontSize: 14,
                 fontWeight: FontWeight.bold,
-                color: Colors.white,
+                color: AppColors.primaryYellow,
               ),
             ),
           ],

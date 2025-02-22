@@ -66,9 +66,8 @@ class _CoustomSearchBarState extends State<CoustomSearchBar> {
         style: const TextStyle(color: AppColors.lightSurface, fontSize: 16),
         decoration: InputDecoration(
           hintText: 'Search...',
-          hintStyle:
-              TextStyle(color: AppColors.lightTextSecondary.withOpacity(0.7)),
-          prefixIcon: const Icon(Icons.search, color: AppColors.lightSurface),
+          hintStyle: TextStyle(color: AppColors.primaryYellow.withOpacity(0.7)),
+          prefixIcon: const Icon(Icons.search, color: AppColors.primaryYellow),
           border: InputBorder.none,
           contentPadding: const EdgeInsets.symmetric(vertical: 14),
         ),

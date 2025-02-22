@@ -1,5 +1,6 @@
 import 'package:carsapp/core/AppColors.dart';
 import 'package:carsapp/features/home/presention/widgets/CustomHomeAppBar.dart';
+import 'package:carsapp/features/home/presention/widgets/FeaturedSection.dart';
 import 'package:carsapp/features/home/presention/widgets/categories_section.dart';
 import 'package:carsapp/features/home/presention/widgets/CoustomSearchBar.dart';
 import 'package:carsapp/features/home/presention/widgets/Featured_Item.dart';
@@ -43,14 +44,7 @@ class HomeView extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 10),
-            Expanded(
-              child: ListView.builder(
-                itemCount: 5,
-                itemBuilder: (context, index) {
-                  return const FeaturedItem();
-                },
-              ),
-            ),
+            FeaturedSection(),
           ],
         ),
       ),

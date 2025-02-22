@@ -1,3 +1,4 @@
+import 'package:carsapp/core/AppColors.dart';
 import 'package:flutter/material.dart';
 import 'package:carsapp/features/home/presention/widgets/Category_Card.dart';
 
@@ -35,7 +36,10 @@ class _CategoriesSectionState extends State<CategoriesSection> {
         children: [
           // Left Arrow
           IconButton(
-            icon: const Icon(Icons.arrow_back_ios, color: Colors.white),
+            icon: const Icon(
+              Icons.arrow_back_ios,
+              color: AppColors.primaryYellow,
+            ),
             onPressed: _scrollLeft,
           ),
 
@@ -55,7 +59,10 @@ class _CategoriesSectionState extends State<CategoriesSection> {
 
           // Right Arrow
           IconButton(
-            icon: const Icon(Icons.arrow_forward_ios, color: Colors.white),
+            icon: const Icon(
+              Icons.arrow_forward_ios,
+              color: AppColors.primaryYellow,
+            ),
             onPressed: _scrollRight,
           ),
         ],

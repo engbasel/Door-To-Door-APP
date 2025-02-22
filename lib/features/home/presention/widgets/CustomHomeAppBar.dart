@@ -1,3 +1,4 @@
+import 'package:carsapp/core/AppColors.dart';
 import 'package:flutter/material.dart';
 import 'package:animate_do/animate_do.dart'; // For animations
 
@@ -46,7 +47,7 @@ class _CustomHomeAppBarState extends State<CustomHomeAppBar>
     return IconButton(
       icon: const Icon(
         Icons.notifications,
-        color: Colors.yellow,
+        color: AppColors.primaryYellow,
       ),
       onPressed: () {
         setState(() {
