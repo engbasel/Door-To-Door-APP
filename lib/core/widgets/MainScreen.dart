@@ -1,3 +1,4 @@
+import 'package:carsapp/core/widgets/CoustomFloationActionButton.dart';
 import 'package:carsapp/core/widgets/CustomBottomNavigationBar.dart';
 import 'package:carsapp/core/widgets/CustomDrawer.dart';
 import 'package:carsapp/features/Brands/presention/views/BrandsScreen.dart';
@@ -42,18 +43,10 @@ class _MainScreenState extends State<MainScreen> {
         currentIndex: _selectedIndex,
         onItemTapped: _onItemTapped,
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(
-              content: Text(
-                  'Add new data for ${_pages[_selectedIndex].runtimeType}'),
-            ),
-          );
-        },
-        backgroundColor: Colors.blue.shade900,
-        child: const Icon(Icons.add, color: Colors.white),
-      ),
+      floatingActionButton: CoustomFloationActionButton(
+          pages: _pages,
+          selectedIndex: _selectedIndex,
+          runtimeType: runtimeType),
     );
   }
 }

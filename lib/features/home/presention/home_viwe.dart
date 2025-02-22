@@ -12,7 +12,9 @@ class HomeView extends StatelessWidget {
         title: Text('Home View'),
       ),
       body: Column(
-        children: [Text('Home View')],
+        children: [
+          Text('Home View'),
+        ],
       ),
     );
   }
