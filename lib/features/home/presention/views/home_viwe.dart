@@ -1,5 +1,6 @@
 import 'package:carsapp/core/AppColors.dart';
-import 'package:carsapp/features/home/presention/widgets/Category_Card.dart';
+import 'package:carsapp/features/home/presention/widgets/CategoriesSection.dart';
+import 'package:carsapp/features/home/presention/widgets/CoustomSearchBar.dart';
 import 'package:carsapp/features/home/presention/widgets/Featured_Item.dart';
 import 'package:flutter/material.dart';
 
@@ -28,18 +29,7 @@ class HomeView extends StatelessWidget {
           children: [
             const SizedBox(height: 16),
             // Search Bar
-            TextField(
-              decoration: InputDecoration(
-                hintText: 'Search...',
-                prefixIcon: const Icon(Icons.search, color: AppColors.darkBlue),
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(10),
-                  borderSide: BorderSide.none,
-                ),
-                filled: true,
-                fillColor: AppColors.secondaryYellow.withOpacity(0.2),
-              ),
-            ),
+            CoustomSearchBar(),
             const SizedBox(height: 20),
 
             // Categories Section
@@ -51,34 +41,7 @@ class HomeView extends StatelessWidget {
                   color: AppColors.darkBlue),
             ),
             const SizedBox(height: 10),
-            SizedBox(
-              height: 100,
-              child: ListView(
-                scrollDirection: Axis.horizontal,
-                children: [
-                  categoryCard(
-                    onTap: () {},
-                    title: 'Cars',
-                    icon: Icons.car_rental,
-                  ),
-                  categoryCard(
-                    title: 'Services',
-                    onTap: () {},
-                    icon: Icons.build,
-                  ),
-                  categoryCard(
-                    title: 'Technicians',
-                    icon: Icons.engineering,
-                    onTap: () {},
-                  ),
-                  categoryCard(
-                    title: 'Accessories',
-                    icon: Icons.shopping_bag,
-                    onTap: () {},
-                  ),
-                ],
-              ),
-            ),
+            CategoriesSection(),
 
             const SizedBox(height: 20),
 
