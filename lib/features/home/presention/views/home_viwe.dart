@@ -1,4 +1,5 @@
 import 'package:carsapp/core/AppColors.dart';
+import 'package:carsapp/features/home/presention/widgets/CustomHomeAppBar.dart';
 import 'package:carsapp/features/home/presention/widgets/categories_section.dart';
 import 'package:carsapp/features/home/presention/widgets/CoustomSearchBar.dart';
 import 'package:carsapp/features/home/presention/widgets/Featured_Item.dart';
@@ -10,18 +11,7 @@ class HomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: AppColors.primaryBlue,
-        title: const Text('Home', style: TextStyle(color: Colors.white)),
-        actions: [
-          IconButton(
-            icon: const Icon(Icons.notifications, color: Colors.white),
-            onPressed: () {
-              // Handle notifications
-            },
-          ),
-        ],
-      ),
+      appBar: CustomHomeAppBar(),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16.0),
         child: Column(
@@ -31,27 +21,26 @@ class HomeView extends StatelessWidget {
             // Search Bar
             CoustomSearchBar(),
             const SizedBox(height: 20),
-
             // Categories Section
             const Text(
               'Categories',
               style: TextStyle(
-                  fontSize: 18,
-                  fontWeight: FontWeight.bold,
-                  color: AppColors.darkBlue),
+                fontSize: 18,
+                fontWeight: FontWeight.bold,
+                color: AppColors.darkBackground,
+              ),
             ),
             const SizedBox(height: 10),
             CategoriesSection(),
-
             const SizedBox(height: 20),
-
             // Featured Section
             const Text(
               'Featured',
               style: TextStyle(
-                  fontSize: 18,
-                  fontWeight: FontWeight.bold,
-                  color: AppColors.darkBlue),
+                fontSize: 18,
+                fontWeight: FontWeight.bold,
+                color: AppColors.darkBackground,
+              ),
             ),
             const SizedBox(height: 10),
             Expanded(

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:carsapp/features/home/presention/widgets/Category_Card.dart';
-import 'package:carsapp/core/AppColors.dart';
 
 class CategoriesSection extends StatefulWidget {
   const CategoriesSection({super.key});
@@ -14,7 +13,7 @@ class _CategoriesSectionState extends State<CategoriesSection> {
 
   void _scrollLeft() {
     _scrollController.animateTo(
-      _scrollController.offset - 200, // Adjust scroll distance
+      _scrollController.offset - 200,
       duration: const Duration(milliseconds: 300),
       curve: Curves.easeInOut,
     );
@@ -22,7 +21,7 @@ class _CategoriesSectionState extends State<CategoriesSection> {
 
   void _scrollRight() {
     _scrollController.animateTo(
-      _scrollController.offset + 200, // Adjust scroll distance
+      _scrollController.offset + 200,
       duration: const Duration(milliseconds: 300),
       curve: Curves.easeInOut,
     );
@@ -31,13 +30,12 @@ class _CategoriesSectionState extends State<CategoriesSection> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 120,
+      height: 130,
       child: Row(
         children: [
           // Left Arrow
           IconButton(
-            color: Colors.blue,
-            icon: Icon(Icons.arrow_back_ios, color: AppColors.primaryBlue),
+            icon: const Icon(Icons.arrow_back_ios, color: Colors.white),
             onPressed: _scrollLeft,
           ),
 
@@ -46,35 +44,18 @@ class _CategoriesSectionState extends State<CategoriesSection> {
             child: ListView(
               controller: _scrollController,
               scrollDirection: Axis.horizontal,
-              children: [
-                CategoryCard(
-                  onTap: () {},
-                  title: 'Cars',
-                  icon: Icons.car_rental,
-                ),
-                CategoryCard(
-                  title: 'Services',
-                  onTap: () {},
-                  icon: Icons.build,
-                ),
-                CategoryCard(
-                  title: 'Technicians',
-                  icon: Icons.engineering,
-                  onTap: () {},
-                ),
-                CategoryCard(
-                  title: 'Accessories',
-                  icon: Icons.shopping_bag,
-                  onTap: () {},
-                ),
+              children: const [
+                CategoryCard(title: 'Cars', icon: Icons.car_rental),
+                CategoryCard(title: 'Services', icon: Icons.build),
+                CategoryCard(title: 'Technicians', icon: Icons.engineering),
+                CategoryCard(title: 'Accessories', icon: Icons.shopping_bag),
               ],
             ),
           ),
 
           // Right Arrow
           IconButton(
-            color: Colors.blue,
-            icon: Icon(Icons.arrow_forward_ios, color: AppColors.primaryBlue),
+            icon: const Icon(Icons.arrow_forward_ios, color: Colors.white),
             onPressed: _scrollRight,
           ),
         ],
