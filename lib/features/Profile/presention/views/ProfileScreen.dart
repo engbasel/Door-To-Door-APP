@@ -5,7 +5,14 @@ class ProfileScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Center(
-        child: Text('Profile Screen', style: TextStyle(fontSize: 22)));
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.green,
+        title: Text('Profile Screen'),
+      ),
+      body: Center(
+        child: Text('Profile Screen'),
+      ),
+    );
   }
 }

@@ -5,7 +5,14 @@ class BrandsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Center(
-        child: Text('Brands Screen', style: TextStyle(fontSize: 22)));
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.blueAccent,
+        title: Text('Brands Screen'),
+      ),
+      body: Center(
+        child: Text('Brands Screen'),
+      ),
+    );
   }
 }

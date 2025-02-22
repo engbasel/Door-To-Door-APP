@@ -32,10 +32,10 @@ class _MainScreenState extends State<MainScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('DoorToDoor'),
-        backgroundColor: Colors.blue.shade900,
-      ),
+      // appBar: AppBar(
+      //   title: const Text('DoorToDoor'),
+      //   backgroundColor: Colors.blue.shade900,
+      // ),
       drawer: const CustomDrawer(),
       body: _pages[_selectedIndex],
       bottomNavigationBar: CustomBottomNavigationBar(

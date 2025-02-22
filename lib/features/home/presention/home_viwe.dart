@@ -6,6 +6,14 @@ class HomeView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.red,
+        title: Text('Home View'),
+      ),
+      body: Column(
+        children: [Text('Home View')],
+      ),
+    );
   }
 }

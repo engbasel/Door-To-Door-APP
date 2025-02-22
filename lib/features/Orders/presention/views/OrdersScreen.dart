@@ -5,7 +5,18 @@ class OrdersScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Center(
-        child: Text('Orders Screen', style: TextStyle(fontSize: 22)));
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.amber,
+        title: Text('Orders'),
+      ),
+      body: ListView.builder(
+          itemCount: 10,
+          itemBuilder: (context, index) {
+            return ListTile(
+              title: Text('Order $index'),
+            );
+          }),
+    );
   }
 }
