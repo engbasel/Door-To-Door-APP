@@ -1,14 +1,12 @@
-// =================== Category Card Widget ===================
-import 'package:carsapp/core/AppColors.dart';
 import 'package:flutter/material.dart';
+import 'package:carsapp/core/AppColors.dart';
 
-// ignore: must_be_immutable, camel_case_types
-class categoryCard extends StatelessWidget {
+class CategoryCard extends StatelessWidget {
   final String title;
   final IconData icon;
-  void Function() onTap;
+  final VoidCallback onTap;
 
-  categoryCard({
+  const CategoryCard({
     super.key,
     required this.title,
     required this.icon,
@@ -19,31 +17,40 @@ class categoryCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: onTap,
-      child: Container(
-        width: 100,
-        margin: const EdgeInsets.only(right: 10),
+      child: AnimatedContainer(
+        duration: const Duration(milliseconds: 300),
+        width: 120,
+        margin: const EdgeInsets.symmetric(horizontal: 8),
+        padding: const EdgeInsets.all(10),
         decoration: BoxDecoration(
-          color: Colors.white,
-          borderRadius: BorderRadius.circular(12),
+          gradient: LinearGradient(
+            colors: [AppColors.primaryBlue, AppColors.secondaryBlue],
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+          ),
+          borderRadius: BorderRadius.circular(16),
           boxShadow: [
             BoxShadow(
-              color: AppColors.primaryBlue.withOpacity(0.2),
-              blurRadius: 5,
-              spreadRadius: 1,
+              color: AppColors.darkBlue.withOpacity(0.2),
+              blurRadius: 6,
+              spreadRadius: 2,
+              offset: const Offset(0, 3),
             ),
           ],
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Icon(icon, size: 30, color: AppColors.primaryBlue),
-            const SizedBox(height: 5),
+            Icon(icon, size: 40, color: Colors.white),
+            const SizedBox(height: 8),
             Text(
               title,
+              textAlign: TextAlign.center,
               style: const TextStyle(
-                  fontSize: 14,
-                  fontWeight: FontWeight.bold,
-                  color: AppColors.darkBlue),
+                fontSize: 14,
+                fontWeight: FontWeight.bold,
+                color: Colors.white,
+              ),
             ),
           ],
         ),
