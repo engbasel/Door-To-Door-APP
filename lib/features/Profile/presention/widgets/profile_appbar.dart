@@ -52,7 +52,7 @@ class _ProfileAppbarState extends State<ProfileAppbar> {
       icon: Stack(
         children: [
           const Icon(
-            Icons.notifications,
+            Icons.person_2_rounded,
             color: AppColors.primaryYellow,
             size: 28,
           ),

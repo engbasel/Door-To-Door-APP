@@ -1,3 +1,4 @@
+import 'package:carsapp/features/Profile/presention/widgets/CircalAvaterAnimation.dart';
 import 'package:carsapp/features/Profile/presention/widgets/buildProfileOption.dart';
 import 'package:carsapp/features/Profile/presention/widgets/profile_appbar.dart';
 import 'package:flutter/material.dart';
@@ -16,21 +17,10 @@ class ProfileScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            TweenAnimationBuilder<double>(
-              tween: Tween(begin: 0.8, end: 1.0),
-              duration: const Duration(seconds: 1),
-              curve: Curves.elasticOut,
-              builder: (context, scale, child) {
-                return Transform.scale(scale: scale, child: child);
-              },
-              child: const CircleAvatar(
-                radius: 50,
-                backgroundImage: AssetImage('assets/images/user_avatar.png'),
-              ),
-            ),
+            CircalAvaterAnimation(),
             const SizedBox(height: 12),
             const Text(
-              "John Doe",
+              "5k subteam",
               style: TextStyle(
                 fontSize: 22,
                 fontWeight: FontWeight.bold,
@@ -45,7 +35,7 @@ class ProfileScreen extends StatelessWidget {
               ),
             ),
             const Text(
-              "johndoe@example.com",
+              "😂احنا اصحاب بلدنا",
               style: TextStyle(color: AppColors.lightTextSecondary),
             ),
             const SizedBox(height: 20),
