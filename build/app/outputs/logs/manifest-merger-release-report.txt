@@ -19,7 +19,7 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\Le
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.13.1] C:\Users\Lenovo\.gradle\caches\transforms-3\889ae3adf7a24645889ee22f4dad2cac\transformed\core-1.13.1\AndroidManifest.xml:28:18-86
 	android:label
-		ADDED from D:\courses\Flutter\projects\my project\carsapp\android\app\src\main\AndroidManifest.xml:3:9-32
+		ADDED from D:\courses\Flutter\projects\my project\carsapp\android\app\src\main\AndroidManifest.xml:3:9-34
 	android:icon
 		ADDED from D:\courses\Flutter\projects\my project\carsapp\android\app\src\main\AndroidManifest.xml:5:9-43
 	android:name
