@@ -3,7 +3,6 @@ import 'package:carsapp/features/home/presention/widgets/CustomHomeAppBar.dart';
 import 'package:carsapp/features/home/presention/widgets/FeaturedSection.dart';
 import 'package:carsapp/features/home/presention/widgets/categories_section.dart';
 import 'package:carsapp/features/home/presention/widgets/CoustomSearchBar.dart';
-import 'package:carsapp/features/home/presention/widgets/Featured_Item.dart';
 import 'package:flutter/material.dart';
 
 class HomeView extends StatelessWidget {
