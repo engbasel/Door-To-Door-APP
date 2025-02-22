@@ -35,11 +35,12 @@ class _CoustomSearchBarState extends State<CoustomSearchBar> {
       curve: Curves.easeInOut,
       padding: const EdgeInsets.symmetric(horizontal: 10),
       decoration: BoxDecoration(
-        color: AppColors.darkBackground,
+        color: AppColors.darkBackgroundblack,
         borderRadius: BorderRadius.circular(20),
         border: Border.all(
-          color:
-              _isFocused ? AppColors.primaryYellow : AppColors.darkBackground,
+          color: _isFocused
+              ? AppColors.primaryYellow
+              : AppColors.darkBackgroundblack,
           width: 2,
         ),
         boxShadow: _isFocused

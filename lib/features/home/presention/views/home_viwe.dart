@@ -27,7 +27,7 @@ class HomeView extends StatelessWidget {
               style: TextStyle(
                 fontSize: 18,
                 fontWeight: FontWeight.bold,
-                color: AppColors.darkBackground,
+                color: AppColors.darkBackgroundblack,
               ),
             ),
             const SizedBox(height: 10),
@@ -39,7 +39,7 @@ class HomeView extends StatelessWidget {
               style: TextStyle(
                 fontSize: 18,
                 fontWeight: FontWeight.bold,
-                color: AppColors.darkBackground,
+                color: AppColors.darkBackgroundblack,
               ),
             ),
             const SizedBox(height: 10),
