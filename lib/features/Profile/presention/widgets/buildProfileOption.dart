@@ -13,7 +13,7 @@ Widget buildProfileOption(IconData icon, String title, VoidCallback onTap) {
         borderRadius: BorderRadius.circular(12),
         boxShadow: [
           BoxShadow(
-            color: AppColors.primaryBlue.withOpacity(0.2),
+            color: AppColors.primaryYellow.withOpacity(0.2),
             blurRadius: 8,
             offset: const Offset(0, 4),
           ),
@@ -21,7 +21,10 @@ Widget buildProfileOption(IconData icon, String title, VoidCallback onTap) {
       ),
       child: Row(
         children: [
-          Icon(icon, color: AppColors.primaryBlue),
+          Icon(
+            icon,
+            color: AppColors.primaryYellow,
+          ),
           const SizedBox(width: 12),
           Expanded(
             child: Text(

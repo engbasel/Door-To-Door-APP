@@ -1,3 +1,8 @@
+import 'package:carsapp/features/Orders/presention/views/OrdersScreen.dart';
+import 'package:carsapp/features/Payment/presention/views/PaymentView.dart';
+import 'package:carsapp/features/Profile/presention/views/ChangePasswordview.dart';
+import 'package:carsapp/features/Profile/presention/views/FeedbackView.dart';
+import 'package:carsapp/features/Profile/presention/views/SettingsView.dart';
 import 'package:carsapp/features/Profile/presention/widgets/CircalAvaterAnimation.dart';
 import 'package:carsapp/features/Profile/presention/widgets/buildProfileOption.dart';
 import 'package:carsapp/features/Profile/presention/widgets/profile_appbar.dart';
@@ -39,11 +44,36 @@ class ProfileScreen extends StatelessWidget {
               style: TextStyle(color: AppColors.lightTextSecondary),
             ),
             const SizedBox(height: 20),
-            buildProfileOption(Icons.person, "Edit Profile", () {}),
-            buildProfileOption(Icons.lock, "Change Password", () {}),
-            buildProfileOption(Icons.history, "Order History", () {}),
-            buildProfileOption(Icons.payment, "Payment Methods", () {}),
-            buildProfileOption(Icons.settings, "Settings", () {}),
+            buildProfileOption(Icons.person, "Feedback Screen", () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => FeedbackView()),
+              );
+            }),
+            buildProfileOption(Icons.lock, "Change Password", () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => ChangePasswordScreen()),
+              );
+            }),
+            buildProfileOption(Icons.history, "Order History", () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => OrdersScreen()),
+              );
+            }),
+            buildProfileOption(Icons.payment, "Payment Methods", () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => PaymentView()),
+              );
+            }),
+            buildProfileOption(Icons.settings, "Settings", () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => SettingsView()),
+              );
+            }),
             const SizedBox(height: 30),
             TweenAnimationBuilder<double>(
               tween: Tween(begin: 0.8, end: 1.0),
