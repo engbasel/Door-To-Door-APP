@@ -1,5 +1,4 @@
 import 'package:carsapp/core/Functions/Splash_duration_func.dart';
-import 'package:carsapp/core/AppColors.dart';
 import 'package:flutter/material.dart';
 
 class SplashView extends StatefulWidget {
@@ -30,7 +29,8 @@ class _SplashViewState extends State<SplashView>
         CurvedAnimation(parent: _animationController, curve: Curves.easeIn));
 
     _scaleAnimation = Tween<double>(begin: 0.8, end: 1.2).animate(
-        CurvedAnimation(parent: _animationController, curve: Curves.easeInOut));
+        CurvedAnimation(
+            parent: _animationController, curve: Curves.elasticOut));
 
     _animationController.forward();
 
@@ -42,12 +42,12 @@ class _SplashViewState extends State<SplashView>
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        decoration: const BoxDecoration(
+        decoration: BoxDecoration(
           gradient: LinearGradient(
             colors: [
-              AppColors.primaryBlue,
-              AppColors.darkBlue
-            ], // Refactored Colors
+              Colors.black.withOpacity(0.9),
+              Colors.black.withOpacity(0.7),
+            ],
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
           ),
@@ -57,46 +57,34 @@ class _SplashViewState extends State<SplashView>
             opacity: _fadeAnimation,
             child: ScaleTransition(
               scale: _scaleAnimation,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
+              child: Stack(
+                alignment: Alignment.center,
                 children: [
-                  // Animated Icon Container
+                  // **Animated Circles** - Pulsating Effect
+                  _buildAnimatedCircle(180, Colors.yellow.withOpacity(0.2)),
+                  _buildAnimatedCircle(140, Colors.yellow.withOpacity(0.4)),
+                  _buildAnimatedCircle(100, Colors.yellow.withOpacity(0.6)),
+
+                  // **Logo with Glassmorphism Effect**
                   Container(
-                    padding: const EdgeInsets.all(20),
+                    padding: const EdgeInsets.all(25),
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
-                      color: AppColors.primaryYellow.withOpacity(0.2),
+                      color: Colors.white.withOpacity(0.1),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.yellow.withOpacity(0.5),
+                          blurRadius: 10,
+                          spreadRadius: 3,
+                        ),
+                      ],
                     ),
-                    child: const Icon(
-                      Icons.directions_car_filled, // Car-related icon
-                      size: 100,
-                      color: AppColors.primaryYellow,
+                    child: Image.asset(
+                      'images/logo.png',
+                      width: 120,
+                      height: 120,
+                      fit: BoxFit.contain,
                     ),
-                  ),
-                  const SizedBox(height: 20),
-
-                  // App Name
-                  const Text(
-                    'Welcome to DoorToDoor',
-                    style: TextStyle(
-                      fontSize: 24,
-                      fontWeight: FontWeight.bold,
-                      color: AppColors.primaryYellow,
-                    ),
-                  ),
-                  const SizedBox(height: 10),
-
-                  // Loading Text
-                  const Text(
-                    'Loading...',
-                    style: TextStyle(fontSize: 18, color: Colors.white70),
-                  ),
-                  const SizedBox(height: 20),
-
-                  // Circular Progress Indicator
-                  const CircularProgressIndicator(
-                    valueColor:
-                        AlwaysStoppedAnimation<Color>(AppColors.primaryYellow),
                   ),
                 ],
               ),
@@ -104,6 +92,28 @@ class _SplashViewState extends State<SplashView>
           ),
         ),
       ),
+    );
+  }
+
+  // **Animated Circle Widget**
+  Widget _buildAnimatedCircle(double size, Color color) {
+    return TweenAnimationBuilder<double>(
+      tween: Tween(begin: 0.8, end: 1.2),
+      duration: const Duration(seconds: 2),
+      curve: Curves.easeInOut,
+      builder: (context, scale, child) {
+        return Transform.scale(
+          scale: scale,
+          child: Container(
+            width: size,
+            height: size,
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              color: color,
+            ),
+          ),
+        );
+      },
     );
   }
 
