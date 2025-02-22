@@ -13,7 +13,7 @@ import 'package:carsapp/features/Services/presention/views/NearbyServicesView.da
 import 'package:carsapp/features/Services/presention/views/ServiceHistoryView.dart';
 import 'package:carsapp/features/auth/presention/view/login_view.dart';
 import 'package:carsapp/features/auth/presention/view/signup_view.dart';
-import 'package:carsapp/features/home/presention/home_viwe.dart';
+import 'package:carsapp/features/home/presention/views/home_viwe.dart';
 import 'package:carsapp/features/splash/presention/views/splash_view.dart';
 import 'package:flutter/material.dart';
 
